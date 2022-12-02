@@ -21,7 +21,7 @@
             <div class="carousel-tracker">
                 <a class="title2" onclick="currentSlide(1)">Send Type</a>
                 <a class="title2" onclick="currentSlide(2)">Receiver</a>
-                <a class="title2" onclick="currentSlide(3);multiplyBoxes()">Box Info</a>
+                <a class="title2" onclick="currentSlide(3);multiplyBoxes();">Box Info</a>
             </div>
             <!-- Carousel Body -->
             <form>
@@ -30,7 +30,7 @@
                     <div class="carousel-content">
                         <p>How would you prefer to hand off your package?</p>
                         <label>
-                            <input type="radio" name="pickup_dropoff" value="pickup" onclick="enableAgents()">
+                            <input type="radio" name="pickup_dropoff" value="pickup" onclick="enableAgents()" checked>
                             Pick Up
                             <select name="agent" id="agent">
                                 <option value="null">Select Agent</option>
@@ -61,18 +61,12 @@
                         <br>
                         <label for="Sender"> FROM:<input type="text" name="Sender" placeholder="Sender Name"> </label>
                         <br>
-                        <input type="number" name="newBoxes" step="1" min="0">
+                        <input type="number" name="newBoxes" step="1" min="1" value="1">
                     </div>
                     <!-- Box Info -->
                     <div class="carousel-content">
                         <!-- Box Size info here (Javascript) -->
                         <div id="boxes">
-                            <select>
-                                <option>Small</option>
-                                <option>Regular</option>
-                                <option>Jumbo</option>
-                                <option>Irregular</option>
-                            </select>
                         </div>
                     </div>
                 </div>
