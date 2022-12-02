@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,1,200" />
+</head>
+<body>
+    <div class="header">
+        <img src="images/GCM_Logo.png" width="50" height="50">
+        <a href="./index.html#default" class="logo">Global Cargo Movers</a>
+        <div class="header-right">
+          <a href="./tracking.html">Tracking</a>
+          <a href="./index.html#about">About</a>
+          <a href="./index.html#contact">Contact</a>
+        </div>
+    </div>
+    <div class="standard">
+        <div>
+            <!-- Carousel Header -->
+            <div class="carousel-tracker">
+                <a class="title2" onclick="currentSlide(1)">Send Type</a>
+                <a class="title2" onclick="currentSlide(2)">Receiver</a>
+                <a class="title2" onclick="currentSlide(3);multiplyBoxes()">Box Info</a>
+            </div>
+            <!-- Carousel Body -->
+            <form>
+                <div class="carousel-container shipping-form2">
+                    <!-- Pick Up or Drop Off-->
+                    <div class="carousel-content">
+                        <p>How would you prefer to hand off your package?</p>
+                        <label>
+                            <input type="radio" name="pickup_dropoff" value="pickup" onclick="enableAgents()">
+                            Pick Up
+                            <select name="agent" id="agent">
+                                <option value="null">Select Agent</option>
+                            </select>
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="pickup_dropoff" value="dropoff" onclick="disableAgents()">
+                            Drop-Off
+                        </label>
+                    </div>
+                    <!-- Sender / Receiver -->
+                    <div class="carousel-content">
+                        <label for="ReceiverName"> 
+                            TO: 
+                            <input type="text" name="ReceiverName" placeholder="Receiver Name">
+                        </label>
+                        <br>
+                        <label for="ReceiverAddress">
+                            Address: 
+                            <input type="text" name="ReceiverAddress" placeholder="Address">
+                        </label>
+                        <br>
+                        <label for="ReceiverPhone">
+                            Phone #: 
+                            <input type="tel" name="ReceiverPhone" placeholder="1-111-222-3333">
+                        </label>
+                        <br>
+                        <label for="Sender"> FROM:<input type="text" name="Sender" placeholder="Sender Name"> </label>
+                        <br>
+                        <input type="number" name="newBoxes" step="1" min="0">
+                    </div>
+                    <!-- Box Info -->
+                    <div class="carousel-content">
+                        <!-- Box Size info here (Javascript) -->
+                        <div id="boxes">
+                            <select>
+                                <option>Small</option>
+                                <option>Regular</option>
+                                <option>Jumbo</option>
+                                <option>Irregular</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- Carousel Footer -->
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <div class="title">
+            Contact Us
+        </div>
+        <div class="content">
+            Email <br>
+            Phone <br>
+            Address
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,1,200" />
+</head>
+<body>
+    <div class="header">
+        <img src="images/GCM_Logo.png" width="50" height="50">
+        <a href="#default" class="logo">Global Cargo Movers</a>
+        <div class="header-right">
+          <a class="active" href="#tracking">Tracking</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="imaged-content carousel" id="tracking">
+            <div class="carousel-tracker">
+                <a class="title2" onclick="currentSlide(1)">Track</a>
+                <a class="title2" onclick="currentSlide(2)">Ship</a>
+                <a class="title2" onclick="currentSlide(3)">Locations</a>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-content">
+                    <div class="content">
+                        <form>
+                            <input type="text" id="trackingNumber" name="trackingNumber" placeholder="Box number/order number">
+                        </form>
+                    </div>
+                </div>
+                <div class="carousel-content shipping">
+                    <form class="shipping-form">
+                        <div class="form-head">
+                            <h3>Fill out this brief form to get started.</h3>
+                            <em>* Required Fields</em>
+                        </div>
+                        <div style="grid-column: 6 / span 2; grid-row: 1/2;">
+                            <label>
+                                <input type="radio" name="pickup_dropoff" value="pickup">
+                                Pick Up
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="pickup_dropoff" value="dropoff">
+                                Drop-Off
+                            </label>
+                        </div>
+                        <input type="text" name="Sender" placeholder="To *" style="grid-column: 1 / span 4;">
+                        <input type="text" name="Receiver" placeholder="From *" style="grid-column: 5 / span 4;">
+                        <label for="newBoxes" style="grid-column: 2 / span 1; justify-self: right;"> Boxes: </label>
+                        <input type="number" id="newBoxes" name="newBoxes" step="1" min="0" placeholder="# of boxes" style="grid-column: 3 / span 1;">
+                        <input type="submit" style="grid-column: 6 / span 2;">
+                    </form>
+                </div>
+                <div class="carousel-content">
+                    <div class="content">
+                        Locations ...
+                    </div>
+                </div>
+            </div>
+            <!-- Dots/bullets/indicators -->
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <div class="ads" id="ads">
+            <div class="content ads-outer">
+                <!--<span class="material-symbols-outlined">local_shipping</span>-->
+                <figure class="ads-inner">
+                    <img src="images/local_shipping.png">
+                    <figcaption>Fast shipping</figcaption>
+                </figure>
+                <!--<span class="material-symbols-outlined">handshake</span>-->
+                <figure class="ads-inner">
+                    <img src="images/handshake.png">
+                    <figcaption>Great Service</figcaption>
+                </figure>
+                <!--<span class="material-symbols-outlined">volunteer_activism</span>-->
+                <figure class="ads-inner">
+                    <img src="images/volunteer_activism.png">
+                    <figcaption>Lots of Care</figcaption>
+                </figure>                
+            </div>
+            <div class="content sign-up">
+                <input type="button" value="Log In" href="login.html">
+                <input type="button" value="Sign Up" href="signup.html">
+            </div>
+        </div>  
+        <div class="info" id="about">
+            <div class="about" id="about">
+                <div class="title">
+                    About
+                </div>
+                <div class="content">
+                    <img src="warehouse.jpg" style="max-width: 100%">
+                    CAPTIONS
+                </div>
+            </div>
+            <div class="news" id="news">
+                <div class="title">
+                    News
+                </div>
+                <div class="content">
+                    **** UPDATE ON CORONA VIRUS ***
+                    
+                    Please click link below to view updates on COVID-19 and how it affects the company and our community. 
+                    <br>
+                    <br>
+                    INDIANA BALIKBAYAN BOX is no longer associated with GCM and has not been associated with the company since September 2019. Please be aware that any boxes for follow up that you sent through them after September is not with GCM. Please follow up with your agent to track your package. 
+                    
+                    Thank you,
+                    
+                    GCM STAFF
+                </div>
+            </div>
+        </div>
+        <div class="contact" id="contact">
+            <div class="title">
+                Contact Us
+            </div>
+            <div class="content">
+                Email <br>
+                Phone <br>
+                Address
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
