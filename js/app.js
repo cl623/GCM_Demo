@@ -85,25 +85,128 @@ function createBoxes(boxList, numBoxes){
       //Create the containing Div for options
       var nDiv = document.createElement("div");
       nDiv.classList.add("boxList");
-      nDiv.id = "boxOptions" + (boxList + 1);
+      nDiv.id = "boxOptions" + (i+1);
 
       //Create Select Element
       var select = document.createElement("select");
-      select.id = "boxsize" + (boxList + 1);
+      select.id = "boxsize" + (i+1);
 
       //Add options for Select
       for(j=0; j < options.length; j++){
         var option = document.createElement("option");
-        option.innerHTML = options[j];
+        option.textContent = options[j];
         option.value = options[j];
         select.options.add(option);
       }
 
+          //Length input
+          let sizingLength = document.createElement("input");
+          sizingLength.type = "num";
+          sizingLength.name = "boxsize" + (i+1) + "_Length";
+          sizingLength.classList.add("sizeInput");
+          sizingLength.min = "0";
+          sizingLength.value = "2.0"
+          sizingLength.disabled = true;
+          sizingLength.required = true;
+
+          //Width input
+          let sizingWidth = document.createElement("input");
+          sizingWidth.type = "num";
+          sizingWidth.name = "boxsize" + (i+1) + "_Width";
+          sizingWidth.classList.add("sizeInput");
+          sizingWidth.min = "0";
+          sizingWidth.value = "4.0";
+          sizingWidth.disabled = true;
+          sizingWidth.required = true;
+
+          //Height input
+          let sizingHeight = document.createElement("input");
+          sizingHeight.type = "num";
+          sizingHeight.name = "boxsize" + (i+1) + "_Height";
+          sizingHeight.classList.add("sizeInput");
+          sizingHeight.min = "0";
+          sizingHeight.value = "6.0";
+          sizingHeight.disabled = true;
+          sizingHeight.required = true;
+
+          //Length Label
+          let lengthLabel = document.createElement("label");
+          lengthLabel.textContent = "Length (ft): ";
+
+          //Width Label
+          let widthLabel = document.createElement("label");
+          widthLabel.textContent = "Width (ft): ";
+
+          //Height Label
+          let heightLabel = document.createElement("label");
+          heightLabel.textContent = "Height (ft): ";
+          
+          let irregular = document.createElement("div");
+
+
+          //Append Label and Input to container
+          irregular.appendChild(lengthLabel);
+          irregular.appendChild(sizingLength);
+          irregular.appendChild(widthLabel);
+          irregular.appendChild(sizingWidth);
+          irregular.appendChild(heightLabel);
+          irregular.appendChild(sizingHeight);
+
+
+
+      var num = document.createElement("p");
+      num.textContent = "Box " + (i+1);
+
       //Append Select to Div
+      nDiv.appendChild(num);  
       nDiv.appendChild(select);
+      nDiv.appendChild(irregular);
 
       //Append Div to Parent Container
       boxDiv.appendChild(nDiv);
+
+      //Event listener to do add Dimension input when Irregular option is chosen
+      document.getElementById('boxsize' + (i+1)).addEventListener('change', function (e) {
+        if (e.target.value === "Irregular") {
+          document.getElementsByName("boxsize"+ (i+1) + "_Length")[0].disabled = false;
+          document.getElementsByName("boxsize"+ (i+1) + "_Width")[0].disabled = false;
+          document.getElementsByName("boxsize"+ (i+1) + "_Height")[0].disabled = false;
+
+          document.getElementsByName("boxsize"+ (i+1) + "_Length")[0].value = '';
+          document.getElementsByName("boxsize"+ (i+1) + "_Width")[0].value = '';
+          document.getElementsByName("boxsize"+ (i+1) + "_Height")[0].value = '';
+        }
+        else if(e.target.value === "Small"){
+          document.getElementsByName("boxsize"+ (i+1) + "_Length")[0].disabled = true;
+          document.getElementsByName("boxsize"+ (i+1) + "_Width")[0].disabled = true;
+          document.getElementsByName("boxsize"+ (i+1) + "_Height")[0].disabled = true;
+
+          document.getElementsByName("boxsize"+ (i+1) + "_Length")[0].value = '2.0';
+          document.getElementsByName("boxsize"+ (i+1) + "_Width")[0].value = '4.0';
+          document.getElementsByName("boxsize"+ (i+1) + "_Height")[0].value = '6.0';
+
+        }
+        else if(e.target.value === "Regular"){
+          document.getElementsByName("boxsize"+ (i+1) + "_Length")[0].disabled = true;
+          document.getElementsByName("boxsize"+ (i+1) + "_Width")[0].disabled = true;
+          document.getElementsByName("boxsize"+ (i+1) + "_Height")[0].disabled = true;
+
+          document.getElementsByName("boxsize"+ (i+1) + "_Length")[0].value = '3.0';
+          document.getElementsByName("boxsize"+ (i+1) + "_Width")[0].value = '4.0';
+          document.getElementsByName("boxsize"+ (i+1) + "_Height")[0].value = '6.0';
+
+        }
+        else if(e.target.value === "Jumbo"){
+          document.getElementsByName("boxsize"+ (i+1) + "_Length")[0].disabled = true;
+          document.getElementsByName("boxsize"+ (i+1) + "_Width")[0].disabled = true;
+          document.getElementsByName("boxsize"+ (i+1) + "_Height")[0].disabled = true;
+
+          document.getElementsByName("boxsize"+ (i+1) + "_Length")[0].value = '4.0';
+          document.getElementsByName("boxsize"+ (i+1) + "_Width")[0].value = '6.0';
+          document.getElementsByName("boxsize"+ (i+1) + "_Height")[0].value = '8.0';
+
+        }
+      });
     }
 }
 

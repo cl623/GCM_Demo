@@ -77,6 +77,6 @@
 	    </div>
 	</div>
 	<p class="error"> <?php echo $_GET['error']; ?></p>
-        <script src="js/app.js"></script>
+        <script src="./js/validate.js"></script>
     </body>
 </html>
